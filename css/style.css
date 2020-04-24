@@ -1,0 +1,87 @@
+*{
+    font-family: "Roboto";
+    box-sizing: border-box;
+    max-width: 1140px;
+    font-weight: 500;
+    font-size: 22px;
+    text-align: center;
+}
+html{
+    margin: 0 auto;
+}
+
+.logo{
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.logo .logo__img{
+    display: initial;
+    width: 50px;
+    margin: 0 10px 0 0;
+}
+
+h1{
+    display: initial;
+    text-transform: uppercase;
+    margin: 0;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 1em;
+}   
+
+.subline{
+    width: 150px;
+    border: 2px solid black;
+    border-radius: 2px;
+    margin: 0 auto 60px auto;
+}
+
+.content .discr{
+    margin: 0 0 60px 0;
+}
+
+.student-container{
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+    padding: 0 10%;
+    justify-content: space-between;
+}
+
+.student-container .student-item{
+    width: 30%;
+}
+
+.student-container .student-item .name{
+    width: 10em;
+    margin: 10px auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.student-container .student-item .univer{
+    width: 10em;
+    margin: 0 auto 30px auto;
+    color: #a9a9a980;
+    font-size: 0.8em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.student-container .student-item .foto{
+    width: 10em;
+    height: 10em;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: ease-in 0.2s;
+}
+
+.student-container .student-item .foto:hover{
+    filter: drop-shadow(0 0 20px purple);
+    transition: ease-out 0.2s;
+}
