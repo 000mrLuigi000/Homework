@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="icon" href="../icons/favicon.png" type="image/png">
+    <script type="module" src="../js/admin.js" defer></script>
+    <title>Tensor Shcool</title>
+</head>
+
+<body>
+    <div class="containerButton">
+        <button id="buttonCerate" class="containerButton_bittons">Добавить персону</button>
+        <button id="buttonUpdate" class="containerButton_bittons">Редактировать персону</button>
+        <button id="buttonDelete" class="containerButton_bittons">Удалить персону</button>
+    </div>
+    <a style="text-align: center;display: block;margin-top: 10px;" href="/">Вернутся</a>
+    <div class="containerConetnt">
+        <table class="containerConetnt__table">
+            <hr>
+            <tr>
+                <th>id</th>
+                <th>Имя</th>
+                <th>Статус</th>
+                <th>Фото</th>
+                <th>Дата рождения</th>
+                <th>Университет</th>
+                <th>Курс/преподает</th>
+            </tr>
+        </table>
+        <table id="table" class="containerConetnt__table"></table>
+        <div id="formConatainer" class="containerConetnt__form">
+            <form id="form" class="containerConetnt__form__person">
+                <img id="exit" src="../icons/close.png" alt="" class="exit">
+                <div class="containerConetnt__form__item"><span>Кто: </span><select name="tag">
+                        <option selected value="student">Студент</option>
+                        <option value="teacher">Преподователь</option>
+                    </select></div>
+                <div class="containerConetnt__form__item"><span>ФИО: </span>
+                    <input type="text" name="name" required>
+                </div>
+                <div class="containerConetnt__form__item"><span>День рождения: </span>
+                    <input type="date" name="birthDate" required>
+                </div>
+                <div class="containerConetnt__form__item"><span>В каком университете учится: </span>
+                    <input type="text" name="university" required></div>
+                <div class="containerConetnt__form__item"><span>На каком курсе: </span>
+                    <input type="text" name="course" required>
+                </div>
+                <div class="containerConetnt__form__item"><span>Что преподает: </span>
+                    <input disabled type="text" name="work" required>
+                </div>
+                <div class="containerConetnt__form__item"><span>Аватарка: </span>
+                    <input type="file" name="avatar" accept="image/*">
+                </div>
+                <img class="containerConetnt__form__avatar" name="avatarPreview" src="#" alt="">
+                <div class="containerConetnt__form__item"><span></span>
+                    <input type="submit" value="Сохранить">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
