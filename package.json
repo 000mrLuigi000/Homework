@@ -1,0 +1,19 @@
+{
+  "name": "tensor_school_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "jest ./public/test/jest.test.js",
+    "dev": "nodemon server.js"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jest": "^26.0.1",
+    "json-server": "^0.16.1"
+  }
+}
