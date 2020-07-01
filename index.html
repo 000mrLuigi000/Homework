@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/png">
+    <script src="https://unpkg.com/inferno@7.4.2/dist/inferno.js" defer></script>
+    <script src="https://unpkg.com/inferno-component@7.4.2/dist/inferno-component.js" defer></script>
+    <script src="https://unpkg.com/inferno-create-element@7.4.2/dist/inferno-create-element.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="module" src="./js/controller.js" defer></script>
+    <title>Морской бой</title>
+</head>
+
+<body>
+    <header class="head">
+        <img src="./img/logo.svg" alt="logo">
+    </header>
+    <main class="main">
+        <div class="main__history">
+            <h3 class="main__history__title">Ходит:</h3>
+            <div id="playerContainer" class="main__history__playerContainer">
+                <!-- <div class="main__history__playerContainer__player">Вы</div>
+                <div class="main__history__playerContainer__player">Бот</div> -->
+            </div>
+            <hr class="main__history__line">
+            <div id="history" class="main__history__container">
+                <!-- <div class="main__history__item">
+                    <div class="main__history__item__matchNumber">1</div>
+                    <div class="main__history__item__playerContainer">
+                        <div class="main__history__item__player">Вы</div>
+                        <div class="main__history__item__player">Ничья</div>
+                        <div class="main__history__item__player">Бот</div>
+                    </div>
+                </div> -->
+            </div>
+            <hr class="main__history__line">
+            <div id="endGame">
+               <!--  <h3 class="main__history__subTitle">Итог:</h3>
+                <div class="main__history__final">Вы попедили</div> -->
+            </div>
+        </div>
+        <div class="main__arena">
+            <svg class="main__arena__grid" width="600" height="600" viewBox="0 0 600 600" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M200 0L200 600" stroke="black" stroke-width="2" stroke-dasharray="10 10" />
+                <path d="M400 0L400 600" stroke="black" stroke-width="2" stroke-dasharray="10 10" />
+                <path d="M600 200L0.000103153 200" stroke="black" stroke-width="2" stroke-dasharray="10 10" />
+                <path d="M600 400L0.000103153 400" stroke="black" stroke-width="2" stroke-dasharray="10 10" />
+            </svg>
+            <div class="main__arena__grid">
+                <div id="inputTable" class="main__arena__inputTable">
+<!--                     <div class="main__arena__inputCell"></div>
+                    <div class="main__arena__inputCell"></div>
+                    <div class="main__arena__inputCell"></div>
+                    <div class="main__arena__inputCell"></div>
+                    <div class="main__arena__inputCell"></div>
+                    <div class="main__arena__inputCell"></div>
+                    <div class="main__arena__inputCell"></div>
+                    <div class="main__arena__inputCell"></div>
+                    <div class="main__arena__inputCell"></div> -->
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

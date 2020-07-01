@@ -1,0 +1,274 @@
+@draw: #0047FF;
+@lose: #E41616;
+@win: #658E56;
+@back: #E0DED4;
+@textActiv: #FFFDF5;
+@textDeactiv: black;
+@shadow: rgba(0, 0, 0, 0.25);
+
+* {
+    font-family: 'Roboto Condensed', sans-serif;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #EFEFEF;
+}
+
+.head {
+    width: 900px;
+    height: 200px;
+    margin: 60px auto 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    width: 900px;
+    height: 600px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+
+    &__history {
+        width: 280px;
+        height: 100%;
+        background: @textActiv;
+        border: 5px solid @textDeactiv;
+        box-shadow: inset 0px 0px 20px @shadow;
+        border-radius: 0px 16px 16px 0px;
+
+        &__title {
+            font-weight: 400;
+            font-size: 36px;
+            line-height: 100%;
+            margin: 20px auto;
+            color: @textDeactiv;
+            text-align: center;
+        }
+
+        &__playerContainer {
+            width: 240px;
+            height: 50px;
+            margin: 0 auto 10px auto;
+            display: flex;
+            justify-content: space-between;
+
+            &__player {
+                width: 80px;
+                height: 100%;
+                background-color: @back;
+                border-radius: 6px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: 400;
+                font-size: 36px;
+                line-height: 100%;
+                color: @textDeactiv;
+
+                &[whoMove='p'] {
+                    &:nth-child(1) {
+                        background-color: @win;
+                        color: @textActiv
+                    }
+                }
+
+                &[whoMove='e'] {
+                    &:nth-child(2) {
+                        background-color: @lose;
+                        color: @textActiv
+                    }
+                }
+            }
+        }
+
+        &__line {
+            border: 1px dashed @textDeactiv;
+            margin: 0 auto;
+        }
+
+        &__container {
+            width: 100%;
+            height: 350px;
+            margin: 10px 0;
+            display: grid;
+            grid-template-rows: repeat(5, 1fr);
+        }
+
+        &__item {
+            width: 100%;
+            height: 62px;
+            position: relative;
+
+            &[whowin=''] {
+                .main__history__item__matchNumber {
+                    background: @back;
+                    color: @textDeactiv;
+                }
+            }
+
+            &[whowin='p'] {
+                .main__history__item__matchNumber {
+                    background: @win;
+                }
+
+                .main__history__item__player:nth-child(1) {
+                    background: @win;
+                    color: @textActiv;
+                }
+            }
+
+            &[whowin='e'] {
+                .main__history__item__matchNumber {
+                    background: @lose;
+                }
+
+                .main__history__item__player:nth-child(3) {
+                    background: @lose;
+                    color: @textActiv;
+                }
+            }
+
+            &[whowin='n'] {
+                .main__history__item__matchNumber {
+                    background: @draw;
+                }
+
+                .main__history__item__player:nth-child(2) {
+                    background: @draw;
+                    color: @textActiv;
+                }
+            }
+
+            &__playerContainer {
+                width: 100%;
+                height: 50px;
+                background-color: @back;
+                margin-top: 12px;
+                display: flex;
+                justify-content: space-between;
+                padding: 5px 15px;
+                align-items: center;
+            }
+
+            &__player {
+                width: 70px;
+                height: 40px;
+                background: @textActiv;
+                border-radius: 6px;
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 100%;
+                color: @textDeactiv;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:nth-child(2) {
+                    height: 30px;
+                    align-self: flex-end;
+                }
+            }
+
+            &__matchNumber {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 100%;
+                color: @textActiv;
+                transform: translateX(-50%);
+            }
+        }
+
+        &__subTitle {
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 100%;
+            margin: 10px auto 5px auto;
+            color: @textDeactiv;
+            text-align: center;
+        }
+
+        &__final {
+            width: 150px;
+            height: 30px;
+            border-radius: 6px;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 100%;
+            text-align: center;
+            color: @textActiv;
+            margin: 0 auto;
+            padding: 2px;
+
+            &[whowin=''] {
+                display: none;
+            }
+
+            &[whowin='p'] {
+                background: @win;
+            }
+
+            &[whowin='e'] {
+                background: @lose;
+            }
+
+            &[whowin='n'] {
+                background: @draw;
+            }
+        }
+    }
+
+    &__arena {
+        width: 600px;
+        height: 600px;
+        position: relative;
+        background: @textActiv;
+        border: 5px solid @textDeactiv;
+        box-shadow: inset 0px 0px 20px @shadow;
+        border-radius: 16px 0px 0px 16px;
+        overflow: hidden; 
+
+        &__grid {
+            position: absolute;
+            left: -5px;
+            top: -5px;
+            width: 600px;
+            height: 600px;
+            
+        }
+
+        &__inputTable {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            justify-items: center;
+            align-items: center; 
+        }
+
+        &__inputCell {
+            width: 90%;
+            height: 90%;
+            border-radius: 16px;
+            background-position: center;
+            transition: background-color ease 0.2s;
+            cursor: pointer;
+            &:hover {
+                background-color: @shadow;
+            }
+        }
+    }
+}
